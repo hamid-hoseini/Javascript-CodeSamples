@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function qSort(arr)
+        {
+            if (arr.length == 0) {
+                return [];
+            }
+            var left = [];
+            var right = [];
+            var pivot = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                //console.log("pivot: " + pivot + " current element: " + arr[i]);
+                if (arr[i] < pivot) {
+                   // console.log("moving " + arr[i] + " to the left");
+                    left.push(arr[i]);
+                } else {
+                    //console.log("moving " + arr[i] + " to the right");
+                    right.push(arr[i]);
+                }
+            }
+            return qSort(left).concat(pivot, qSort(right));
+        }
+        var a = [];
+        for (var i = 0; i < 10; ++i) {
+            a[i] = Math.floor((Math.random()*100)+1);
+        }
+        console.log(a);
+        console.log(qSort(a));
+        var names = "Sophia, Emma, Olivia, Isabella, Mia, Ava, Lily, Zoe, Emily, Chloe, Layla, Madison, Madelyn, Abigail, Aubrey, Charlotte, Amelia, Ella, Kaylee, Avery, Aaliyah, Hailey, Hannah, Addison, Riley, Harper, Aria, Arianna, Mackenzie, Lila, Evelyn, Adalyn, Grace, Brooklyn, Ellie, Anna, Kaitlyn, Isabelle, Sophie, Scarlett, Natalie, Leah, Sarah, Nora, Mila, Elizabeth, Lillian, Kylie, Audrey, Lucy, Jackson, Aide, Liam, Lucas, Noah, Mason,Jayden, Ethan, Jacob, Jack, Caden, Logan, Benjamin, Michael, Caleb, Ryan, Alexander, Elijah, James, William, Oliver, Connor, Matthew, Daniel, Luke, Brayden, Jayce, Henry, Carter, Dylan, Gabriel, Joshua,Nicholas, Isaac, Owen, Nathan, Grayson, Eli, Landon, Andrew, Max, Samuel, Gavin, Wyatt, Christian, Hunter, Cameron, Evan, Charlie, David";
+        var split=names.split(', ');
+
+        console.log(qSort(split));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

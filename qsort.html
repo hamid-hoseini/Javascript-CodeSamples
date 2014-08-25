@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var arr = [];
+        for (var i = 0; i < 10; ++i) {
+            arr[i] = Math.floor((Math.random()*100)+1);
+        }
+        //var arr = [8, 2, 5, 7, 4, 3, 12, 6, 19, 11, 10, 13, 9];
+        quickSort(arr, 0, arr.length -1)
+        console.log(arr);
+        var names = "Sophia, Emma, Olivia, Isabella, Mia, Ava, Lily, Zoe, Emily, Chloe, Layla, Madison, Madelyn, Abigail, Aubrey, Charlotte, Amelia, Ella, Kaylee, Avery, Aaliyah, Hailey, Hannah, Addison, Riley, Harper, Aria, Arianna, Mackenzie, Lila, Evelyn, Adalyn, Grace, Brooklyn, Ellie, Anna, Kaitlyn, Isabelle, Sophie, Scarlett, Natalie, Leah, Sarah, Nora, Mila, Elizabeth, Lillian, Kylie, Audrey, Lucy, Jackson, Aide, Liam, Lucas, Noah, Mason,Jayden, Ethan, Jacob, Jack, Caden, Logan, Benjamin, Michael, Caleb, Ryan, Alexander, Elijah, James, William, Oliver, Connor, Matthew, Daniel, Luke, Brayden, Jayce, Henry, Carter, Dylan, Gabriel, Joshua,Nicholas, Isaac, Owen, Nathan, Grayson, Eli, Landon, Andrew, Max, Samuel, Gavin, Wyatt, Christian, Hunter, Cameron, Evan, Charlie, David";
+        var split=names.split(', ');
+        console.log(split);
+
+        quickSort(split, 0, arr.length -1)
+
+        console.log(split);
+        function  quickSort(arr, left, right) {
+            var i = left;
+            var j = right;
+            var tmp;
+            var pivotidx = (left + right) / 2;
+            var pivot = (arr[pivotidx.toFixed()]);
+            /* partition */
+            while (i <= j) {
+                while (arr[i] < pivot)
+                    i++;
+                while (arr[j] > pivot)
+                    j--;
+                if (i <= j) {
+                    tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                    i++;
+                    j--;
+                }
+            }
+
+            /* recursion */
+            if (left < j)
+                quickSort(arr, left, j);
+            if (i < right)
+                quickSort(arr, i, right);
+            return arr;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
