@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function logPerfix(){
+            var arg= Array.prototype.slice.call(arguments);
+            arg.unshift('log: ');
+            console.log.apply(console, arg);
+        }
+        logPerfix('Hamid & Mary');
+
+        /*============================*/
+        var log= console.log;
+        console.log= function () {
+            var arr=[];
+            while(arguments.length) {
+                arr.push('log: ' + [].shift.call(arguments));
+            }
+            log.apply(console, arr);
+        }
+
+        console.log('Hamid & Mary');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+
+do not use implicit variables
+
+use strict
+
+iife - immediately invoked function expression
+
+(function () {}())
+
+closures to implement private variables
+
+jslint - use break, return statements
+
+if ()
+{} - wrong
+
+if () { - on one line
+
+return
+{} - wrong
+
+return {
+
+}
+
+http://jslint.com/help.html

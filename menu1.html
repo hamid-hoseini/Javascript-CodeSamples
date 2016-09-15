@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        /* CSS Selectors */
+        body {
+            font: 300 1em 'Helvetica Neue';
+        }
+
+        input#data + label + ul {
+            position: absolute;
+            list-style-type: none;
+            background-color: #eee;
+            padding: 0.25em;
+            transition: left 500ms ease;
+            left: -200px;
+            margin: 0;
+        }
+
+        input#data + label + ul > li {
+            padding: 0.35em 0.5em;
+            border: 1px solid #eee;
+            font-size: 0.85em;
+        }
+
+        input#data + label + ul > li:hover {
+            background-color: #ccc;
+            transition: background-color 500ms ease;
+            cursor: pointer;
+        }
+        /*input[type="checkbox"]:checked + label + ul*/
+        input#data:checked + label + ul {
+            left: 0;
+            transition: left 500ms ease;
+        }
+
+        div.menu {
+            position: relative;
+            margin: 3em 1em;
+        }
+
+        input#data {
+            display: none;
+        }
+        input#data + label {
+            cursor: pointer;
+            background-color: #eee;
+            padding: 0.35em 0.5em;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu">
+        <input type="checkbox" id="data"/>
+        <label for="data">Menu</label>
+    <ul>
+        <li>Mail for Personal</li>
+        <li>Mail for Mobile</li>
+        <li>Mail for Business</li>
+        <li>Help</li>
+    </ul>
+</div>
+
+
+</body>
+</html>

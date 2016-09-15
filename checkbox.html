@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var btn=document.getElementsByTagName('button')[0];
+            //alert(btn);
+            btn.addEventListener('click',function(){
+                //alert('test');
+                var chk=document.getElementsByName('test');
+                console.log(chk.length);
+                var addon=0;
+                for (var e=0;e<chk.length;e++) {
+                    if (chk[e].checked===true) {
+                        addon++;
+                        console.log(chk[e].value);
+                    }
+                }
+                console.log(addon);
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="text">
+<br>
+<lable>apple</lable><input type="checkbox" name='test' value="100">
+<lable>google</lable>  <input type="checkbox" name='test' value="200">
+<lable>microsoft</lable>  <input type="checkbox" name='test' value="300">
+<button>submit</button>
+</body>
+</html>

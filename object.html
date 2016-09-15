@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // prototypal inheritance by using constructors
+        function Car() {}
+        Car.prototype.wheels = 4;
+        var car = new Car();
+        console.log(car.wheels);
+
+        // by using Object.create
+        var x = {
+            someprop: 32
+        };
+        var y = Object.create(x);
+        console.log(y.someprop);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

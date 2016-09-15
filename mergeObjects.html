@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var obj1={
+                    a:20,
+                    b:30,
+                    c:{
+                        d:50,
+                        e:60,
+                        f:{
+                            hh:150
+                        }
+                    },
+                    f:80,
+                    g:90
+                },
+                obj2={
+                    a:30,
+                    b:60,
+                    c:{
+                        r:45,
+                        e:55,
+                        f:{
+                            ff:100,
+                            gg:200
+                        }
+                    },
+                    g:12,
+                    q:13
+                };
+
+        function merge(a, b){
+            for (var prop in b){
+                if (a.hasOwnProperty(prop)){
+                    if(typeof b[prop] ==='object' ){
+                        merge(a[prop],b[prop]);
+                    }
+                }
+                else{
+                    a[prop] = b[prop];
+                }
+            }
+            return a;
+        }
+        var newObj= merge(obj1,obj2);
+        console.log(newObj)
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

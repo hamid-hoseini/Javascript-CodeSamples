@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var arr=[1,2,3,5,4,7];
+        console.log(Array.isArray(arr));    // true
+
+        // all of follow codes return true
+        Array.isArray([]);
+        Array.isArray(new Array());
+        // Little known fact: Array.prototype itself is an array:
+        Array.isArray(Array.prototype);
+
+        // if browser does not support isArray
+        if (!Array.isArray) {
+            Array.isArray = function(arg) {
+                return Object.prototype.toString.call(arg) === '[object Array]';
+            };
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

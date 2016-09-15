@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        //using profiler on the chrome
+        //http://stackoverflow.com/questions/5346010/start-and-stop-profiling-from-javascript-in-chrome
+
+        if (window.console && window.console.profile) {
+            console.profile("label for profile");
+            function swap(items, firstIndex, secondIndex) {
+                var temp = items[firstIndex];
+                items[firstIndex] = items[secondIndex];
+                items[secondIndex] = temp;
+            }
+
+            function partition(items, left, right) {
+                var pivot = items[Math.floor((right + left) / 2)],
+                        i = left,
+                        j = right;
+                while (i <= j) {
+                    while (items[i] < pivot) {
+                        i++;
+                    }
+                    while (items[j] > pivot) {
+                        j--;
+                    }
+                    if (i <= j) {
+                        swap(items, i, j);
+                        i++;
+                        j--;
+                    }
+                }
+                return i;
+            }
+
+            function quickSort(items, left, right) {
+                var index;
+                if (items.length > 1) {
+                    index = partition(items, left, right);
+                    if (left < index - 1) {
+                        quickSort(items, left, index - 1);
+                    }
+                    if (index < right) {
+                        quickSort(items, index, right);
+                    }
+                }
+                return items;
+            }
+
+            var items = "Sophia, Emma, Olivia, Isabella, Mia, Ava, Lily, Zoe, Emily, Chloe, Layla, Madison, Madelyn, Abigail, Aubrey, Charlotte, Amelia, Ella, Kaylee, Avery, Aaliyah, Hailey, Hannah, Addison, Riley, Harper, Aria, Arianna, Mackenzie, Lila, Evelyn, Adalyn, Grace, Brooklyn, Ellie, Anna, Kaitlyn, Isabelle, Sophie, Scarlett, Natalie, Leah, Sarah, Nora, Mila, Elizabeth, Lillian, Kylie, Audrey, Lucy, Jackson, Aide, Liam, Lucas, Noah, Mason,Jayden, Ethan, Jacob, Jack, Caden, Logan, Benjamin, Michael, Caleb, Ryan, Alexander, Elijah, James, William, Oliver, Connor, Matthew, Daniel, Luke, Brayden, Jayce, Henry, Carter, Dylan, Gabriel, Joshua,Nicholas, Isaac, Owen, Nathan, Grayson, Eli, Landon, Andrew, Max, Samuel, Gavin, Wyatt, Christian, Hunter, Cameron, Evan, Charlie, David";
+            var split = items.split(', ');
+            console.log(split);
+            // first call
+            var result = quickSort(split, 0, split.length - 1);
+            console.log(result);
+            console.profileEnd();
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function creatObject(o){
+        if (typeof o !=='object') return null;
+        else{
+            function Obj() {
+
+            }
+            Obj.prototype=o;
+            return new Obj();
+        }
+    }
+    var obj={
+        id:30,
+        name: "hamid"
+    };
+
+    var a=creatObject(obj);
+    console.log(a.id);
+
+</script>
+</body>
+</html>

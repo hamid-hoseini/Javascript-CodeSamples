@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function counter(n) { // Function argument n is the private variable
+            return {
+                get count() { return n++; },
+                set count(m) {
+                    if (m >= n) n = m;
+                    else throw Error("count can only be set to a larger value");
+                }
+            };
+        }
+
+        var c=counter(100);
+        console.log(c.count);
+        console.log(c.count);
+        c.count=120;
+        console.log(c.count);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

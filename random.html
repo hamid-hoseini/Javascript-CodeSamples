@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function generate(){
+                var number=[];
+                var visited=[];
+                var i=0;
+                while (i<100) {
+                    var n = Math.floor(Math.random() * 100) ;
+                    var exist=number.indexOf(n);
+                    if (exist==-1) {
+                        number.push(n);
+                        visited.push(1);
+                    }
+                    else{
+                        visited[exist]++;
+                    }
+                    i++;
+                    }
+                return {
+                    num:number,
+                    vis:visited
+                }
+            };
+            var obj=generate();
+            for (var i= 0, len=obj.num.length;i<len;i++){
+                console.log(obj.num[i]," => ", obj.vis[i]);
+            }
+           /* console.log(generate().num);
+            console.log(generate().vis);*/
+        })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

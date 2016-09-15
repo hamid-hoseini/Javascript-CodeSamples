@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var obj={x:10};
+        console.log(Object.getOwnPropertyDescriptor(Object.prototype,'toString'));
+        console.log(Object.getOwnPropertyDescriptor(obj,'x'));
+        console.log(Object.getOwnPropertyDescriptor(obj,'toString'));   // show undefined
+
+
+        console.log('Object.key(s) with  prop set non-enumerable :',Object.keys(obj));
+        console.log('Object.getOwnPropertyNames(s) with  prop set non-enumerable :',Object.getOwnPropertyNames(obj));
+
+
+        Object.defineProperty(obj,'y' ,{
+            enumerable:false
+        }) ;
+        //console.log(JSON.stringify(obj));      // it doesn't show function inside of object and enumerable:false
+
+
+        //change the object to a value we can use of valueOf()
+        var c1={
+            prop: 1,
+            valueOf: function(){
+                return String(this.prop);
+            }
+        };
+        //console.log(Number(cl));
+
+
+        /*--------*/
+        (function() {
+            baz = 5;
+            var bar = 10;
+        })();
+        console.log(baz); // outputs 5
+        //console.log(bar); // error: bar is not defined
+
+        /*----------------*/
+        var calculator = { // An object literal
+            operand1: 1,
+            operand2: 1,
+            add: function() {
+// Note the use of the this keyword to refer to this object.
+                this.result = this.operand1 + this.operand2;
+            }
+        };
+        console.log(calculator.result); // undefined
+        calculator.add(); // A method invocation to compute 1+1.
+        console.log(calculator.result); // => 2
+
+        /*------------------*/
+
+        var adder = new Function("a", "b", "return a + b");
+        // Call the function
+        //console.log(adder(2, 6));
+
+        function Addr(){
+            this.x=10;
+        }
+        var a=new Addr();
+        console.log(a.x);
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

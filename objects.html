@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var cnt=0;
+        function Car(){
+            Car.prototype.counter++;
+            this.counter = Car.prototype.counter;
+        }
+        Car.prototype.counter=cnt;
+        var car1=new Car();
+        var car2=new Car();
+
+        console.log(car1.counter);
+        console.log(car2.counter);
+
+        Car.counter=100;
+        console.log(Car.counter);   // shows 100
+        var car3=new Car();
+        console.log(car3.counter);  // shows 3
+
+        /*=====================================*/
+        function isEqual(a, b) {
+            var aProps = Object.getOwnPropertyNames(a),
+                bProps = Object.getOwnPropertyNames(b);
+            if (aProps.length != bProps.length) {
+                return false;
+            }
+            for (var i = 0; i < aProps.length; i++) {
+                var propName = aProps[i];
+
+                if (a[propName] !== b[propName]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

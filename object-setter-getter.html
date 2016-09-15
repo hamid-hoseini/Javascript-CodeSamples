@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        h1{
+            text-align:justify;
+        }
+        a:link{
+
+        }
+    </style>
+   <script>
+        var o = {
+            // An ordinary data property
+            data_prop: 0,
+            // An accessor property defined as a pair of functions
+            get accessor_prop() { return data_prop;},
+            set accessor_prop(value) { data_prop= value;}
+        };
+        var user_name="hamid";
+        alert("Well, hello " & user_name & "! I hope you like the site");
+        /*o.accessor_prop=10;
+        console.log(o.accessor_prop);
+
+
+        function counter(n) { // Function argument n is the private variable
+            return {
+                // Property getter method returns and increments private counter var.
+                get count() { return n++; },
+                // Property setter doesn't allow the value of n to decrease
+                set count(m) {
+                    if (m >= n) n = m;
+                    else throw Error("count can only be set to a larger value");
+                }
+            };
+        }
+
+        var c = counter(1000);
+
+*//*      c.count // => 1000
+        c.count // => 1001
+        c.count = 2000
+        c.count // => 2000
+        c.count = 2000 // => Error!*/
+
+
+   </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

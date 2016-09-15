@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /********  map *********/
+        //example1
+        var numbers = [1, 4, 9];
+        var roots = numbers.map(Math.sqrt);
+        // roots is now [1, 2, 3], numbers is still [1, 4, 9]
+
+        //example2
+        var numbers = [1, 4, 9];
+        var doubles = numbers.map(function(num) {
+            return num * 2;
+        });
+        // doubles is now [2, 8, 18]. numbers is still [1, 4, 9]
+
+        //example3
+        var map = Array.prototype.map;
+        var a = map.call('Hello World', function(x) { return x.charCodeAt(0); });
+        // a now equals [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+
+        //example4
+        var elems = document.querySelectorAll('select option:checked');
+        var values = [].map.call(elems, function(obj) {
+            return obj.value;
+        });
+
+
+        /********  reduce *********/
+        //example1
+        [0, 1, 2, 3, 4].reduce(function(previousValue, currentValue, index, array) {
+            return previousValue + currentValue;
+        });
+
+        //example2
+        var total = [0, 1, 2, 3].reduce(function(a, b) {
+            return a + b;
+        });
+        // total == 6
+
+        //example3
+        var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+            return a.concat(b);
+        });
+        // flattened is [0, 1, 2, 3, 4, 5]
+
+
+        /********  reduceRight *********/
+        var flattened = [[0, 1], [2, 3], [4, 5]].reduceRight(function(a, b) {
+            return a.concat(b);
+        }, []);
+        // flattened is [4, 5, 2, 3, 0, 1]
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

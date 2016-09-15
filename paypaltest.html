@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var para=document.getElementsByTagName('p');
+            for (var i=0;i<para.length;i++){
+                if (i%2 !=0) {
+                    para[i].className = 'hide';
+                }
+                else{
+                    para[i].addEventListener('click',function(event){
+                        for (var i = 0;i<para.length;i++) {
+                            if ( i % 2 === 1 )
+                                para[i].className = 'hide';
+                        }
+                        this.nextSibling.nextSibling.className = this.nextSibling.nextSibling.className ==='hide'? '' : 'hide';
+                    });
+                }
+            }
+
+            // finding index of each element
+            /* console.log(event.target.getAttribute('data-id'));
+             var idx=Array.prototype.indexOf.call(para, para[event.target.getAttribute('data-id')]);*/
+        });
+    </script>
+</head>
+<body>
+<p data-id="1">P1</p>
+<p data-id="2">P2</p>
+<p data-id="3">P3</p>
+<p data-id="4">P4</p>
+
+<p data-id="5">P5</p>
+<p data-id="6">P6</p>
+
+</body>
+</html>

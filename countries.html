@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="countries.js"></script>
+    <script>
+        var sum=0;
+        var pop= countries.map(function (item) {
+            return item.population;
+        });
+        console.log(pop);
+        var result = pop.reduce(function (prev, curr) {
+            return prev + curr;
+
+        });
+        console.log(result);
+
+        var population = countries.reduce(function (total, country) {
+            return total + country.population;
+
+        },0);
+        console.log(population);
+
+        var countries_nonBorders = countries.filter(function (country) {
+            return country.borders.length===0;
+        }).map(function (country) {
+            return country.name;
+        })
+        console.log(countries_nonBorders);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

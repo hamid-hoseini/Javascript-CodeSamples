@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            function checkAnagrams(str1,str2){
+                var split1=(str1.split('')).sort().join('');
+                var split2=str2.split('').sort().join('');
+                console.log(split1);
+                console.log(split2);
+                if (split1===split2)
+                    return true;
+                else
+                    return false;
+                //console.log(split1);
+                var result=true;
+                /*split1.forEach(function (data) {
+                    //if ( split2.indexOf(data)==-1)   result=false;
+                    console.log(split2.indexOf(data));
+                })*/
+            }
+            //console.log(checkAnagrams("paypal","ypalp"));
+            console.log(checkAnagrams("paypal","ypalpa"));
+        });
+        function doRevers(inp){
+            return inp.split('').reverse().join('');
+        }
+
+        String.prototype.reverse=function(){
+            //return doRevers(this);
+            return this.split('').reverse().join('');
+        }
+        console.log('hamid'.reverse());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

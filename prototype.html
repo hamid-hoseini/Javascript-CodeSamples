@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // Array Prototype
+        Array.prototype.duplicate=function(){
+            return this.concat(this);
+
+        }
+        console.log([2,4,8,6,9,3].duplicate());     // result is  [2, 4, 8, 6, 9, 3, 2, 4, 8, 6, 9, 3]
+
+        // String Prototype
+        String.prototype.revers=function(){
+            return this.split('').reverse().join('');
+        }
+        console.log("hamid".revers());      // result is dimah
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        var scope = "global scope"; // A global variable
+        function checkscope() {
+            var scope = "local scope"; // A local variable
+            function f() { return scope; } // Return the value in scope here
+            return f();
+        }
+        console.log(checkscope()) // => "local scope"
+
+        /*------another sample----------*/
+        //This is called a JavaScript closure. It makes it possible for a function to have "private" variables.
+        //The counter is protected by the scope of the anonymous function, and can only be changed using the add function.
+        var add = (function () {
+            var counter = 0;
+            return function () {return counter += 1;}
+        })();
+
+        add();
+        add();
+        add();
+        // the counter is now 3
+
+        /*------another sample----------*/
+        function counter() {
+            var n = 0;
+            return {
+                count: function() { return n++; },
+                reset: function() { n = 0; }
+            };
+        }
+        var c = counter(), d = counter(); // Create two counters
+
+        console.log(c.count());
+        console.log(d.count());
+        c.reset();
+        console.log(d.count());
+        console.log(c.count());
+
+     </script>
+</head>
+<body>
+
+</body>
+</html>

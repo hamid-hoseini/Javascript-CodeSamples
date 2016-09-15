@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Anthropod(){
+            return Anthropod.prototype.constructorInvoked++;
+        }
+        Anthropod.prototype.constructorInvoked =0;
+
+        var s= new Anthropod();
+        console.log(s.constructorInvoked);
+        var s2= new Anthropod();
+        console.log(s.constructorInvoked);
+        console.log(s2.constructorInvoked);
+        var s3= new Anthropod();
+        console.log(s3.constructorInvoked);
+        console.log(s.constructorInvoked);
+        console.log(s2.constructorInvoked);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

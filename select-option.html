@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //http://jsbin.com/neramavigibu/1/edit
+        document.addEventListener('DOMContentLoaded',function(){
+            var sel=document.getElementById('sel');
+            sel.addEventListener('change',function(){
+                console.log(sel.value);
+                console.log(sel.Text);
+                var divval=document.getElementById('divval');
+                var divname=document.getElementById('divname');
+
+                divval.innerHTML=sel.value;
+                divname.innerHTML=sel.options[sel.selectedIndex].text;
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div>Test for Hamid</div>
+<div>Write code to show the selected data and index of a select/options element</div>
+<select id='sel'>
+    <option value=1>C#</option>
+    <option value=2>PHP</option>
+    <option value=3>JAva</option>
+    <option value=4>Python</option>
+</select>
+<div id='divval'>0</div>
+<div id='divname'>C#</div>
+</body>
+</html>

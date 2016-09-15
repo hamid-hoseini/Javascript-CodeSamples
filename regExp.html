@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+         consider you have given a string =”ABCRC” and want to write a code to figure out whether it contains a substring=”BC” or not.
+         If no , return “-1″.
+         If yes , remove the substring from string and return “ARC”.
+        */
+        function check_string(str, pat) {
+            "use strict";
+            var myReg = new RegExp(pat, "g");
+            if (myReg.test(str) === false) {
+                return -1;
+            } else {
+                var l = pat.length;
+                var i = str.indexOf(pat);
+                return str.slice(0, i) + str.slice(i + l);
+            }
+        }
+
+        alert(check_string('ABCSC', 'abc'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

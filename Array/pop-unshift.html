@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var text="w3resources";
+            String.prototype.rotation=function(){
+                var spl=this.split('');
+                var p=spl.pop();
+                spl.unshift(p);
+                return spl.join('');
+            };
+            var elm=document.getElementsByTagName('span')[0];
+            setInterval(function () {
+                text=text.rotation();
+                elm.innerHTML=text;
+            },100)
+        });
+    </script>
+</head>
+<body>
+<span></span>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #main{
+            width:100%;
+            border: 1px solid black;
+            display: inline-block;
+        }
+        #main> div{
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            float: left;
+            display: flex;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function() {
+            var main = document.getElementById("main");
+            main.addEventListener("click", function (e) {
+                console.log(e.target.parentNode.childNodes);    //[text, div, text, div, text, div, text, div, text]
+                console.log(e.target.parentNode.children);      //[div, div, div, div]
+                console.log(e.target.parentNode.firstChild.nextSibling);
+                console.log(e.target.parentNode.nodeType);
+                console.log(e.target.parentNode.nextSibling.nodeValue);
+                console.log(e.target.parentElement);
+                console.log(e.target.parentNode);
+
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="main">hamid
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+</body>
+</html>

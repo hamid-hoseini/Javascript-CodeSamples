@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+    var ul= document.createElement('ul');
+    console.log(ul);
+    document.body.appendChild(ul)
+    while(true){
+        var text= prompt('what is te text elemnt');
+        if (text==null)
+            break;
+        var li= document.createElement('li');
+        li.appendChild(document.createTextNode(text));
+        ul.appendChild(li);
+    }
+/*
+    Creation methods:
+            document.createElement(tag) - creates a new element node.
+            document.createTextNode(value) - creates a new text node with given value
+            elem.cloneNode(deep) - clones the element
+    Inserting and removing methods are called from parent node. All of them return elem:
+
+        parent.appendChild(elem)
+        parent.insertBefore(elem, nextSibling)
+        parent.removeChild(elem)
+        parent.replaceChild(elem, currentElem)*/
+</script>
+</body>
+</html>
