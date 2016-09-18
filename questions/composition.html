@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * Description:
+         * Your task is to create a compose function to carry out this task, which will be passed two functions or lambdas. Ruby functions will be passed, and should return, either a proc or a lambda. Remember that the resulting composed function may be passed multiple arguments!
+
+         compose(f , g)(x)
+         => f( g( x ) )
+         * */
+
+        // solution1:
+        function compose(f,g) {
+            return function() {
+                return f(g.apply(this,arguments));
+            };
+        }
+
+        // solution2:
+        function compose(f,g) {
+            return function(){return f.call(this,g.apply(this,arguments));};
+        }
+
+        // how to test it?
+
+        add1 = function(a){return a + 1};
+        min1 = function(a){return a - 1};
+        div2 = function(a){return a / 2};
+        add15 = function(a){return a + 15};
+        id = function(a){return a};
+        addall5 = function(a,b,c,d,e){return a+b+c+d+e};
+
+        Test.expect( compose(add1,id)(0) == 1 );
+        Test.expect( compose(add1,div2)(2) == 2, "Order should be as specified!" );
+        Test.expect( compose(add1,addall5)(1,2,3,4,5) == 16, "Functions may be called with many arguments.");
+
+        Test.expect( compose(add15,id)(0) == 15 );
+        Test.expect( compose(id,add15)(0) == 15 );
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

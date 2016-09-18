@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Car(){this.doors=4;}
+        Car.prototype.roll = function () {
+            console.log(' car is rolling ....');
+
+        };
+        var audi = new Car();
+        console.log(' The constructor of audi is ....');
+        console.log('Is the constructor an own prototype of audi  ', audi.hasOwnProperty('constructor'));           //false
+        console.log('Is the constructor an own prototype of audi  ', Car.prototype.hasOwnProperty('constructor'));  //true
+
+        function creatObject(obj){
+            return new obj.constructor();
+        }
+
+        var bmw = creatObject(audi);
+        console.log(bmw.doors);
+        bmw.roll();
+
+        console.log(Car.prototype.constructor);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

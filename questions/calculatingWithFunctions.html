@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * Description:
+
+         This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+         seven(times(five())); // must return 35
+         four(plus(nine())); // must return 13
+         eight(minus(three())); // must return 5
+         six(dividedBy(two())); // must return 3
+         Requirements:
+
+         There must be a function for each number from 0 ("zero") to 9 ("nine")
+         There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy (divided_by in Ruby)
+         Each calculation consist of exactly one operation and two numbers
+         The most outer function represents the left operand, the most inner function represents the right operand
+         */
+
+        function zero(num) {
+            var op1= "0";
+            return calc(op1, num);
+        }
+        function one(num) {
+            var op1= "1";
+            return calc(op1, num);
+        }
+        function two(num) {
+            var op1= "2";
+            return calc(op1, num);
+        }
+        function three(num) {
+            var op1= "3";
+            return calc(op1, num);
+        }
+        function four(num) {
+            var op1= "4";
+            return calc(op1, num);
+        }
+        function five(num) {
+            var op1= "5";
+            return calc(op1, num);
+        }
+        function six(num) {
+            var op1= "6";
+            return calc(op1, num);
+        }
+        function seven(num) {
+            var op1= "7";
+            return calc(op1, num);
+        }
+        function eight(num) {
+            var op1= "8";
+            return calc(op1, num);
+        }
+        function nine(num) {
+            var op1= "9";
+            return calc(op1, num);
+        }
+
+        function plus(num) { return "+"+num;}
+        function minus(num) {return "-"+num;}
+        function times(num) {return "*"+num;}
+        function dividedBy(num) {return "/"+num;}
+        function calc(op1,num){
+            var op2=0, sign=0;
+            if (num === null || num === undefined)
+                return op1;
+            else {
+                sign = num.substr(0,1);
+                op2 = num.substr(1);
+            }
+            var result= 0;
+            switch (sign){
+                case "+":
+                    result= parseInt(op1)+parseInt(op2);
+                    break;
+                case "-":
+                    result= parseInt(op1)-parseInt(op2);
+                    break;
+                case "*":
+                    result= op1*op2;
+                    break;
+                case "/":
+                    result= op1/op2;
+                    break;
+            }
+            return result;
+        }
+
+        console.log(eight(minus(three())));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

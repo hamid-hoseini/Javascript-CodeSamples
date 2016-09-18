@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>GoogleMap Directive</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?v=3.exp">
+    </script>
+
+
+    <script type="text/ng-template" id="_googleMap.html">
+        <div>
+            <label for="txtLat">Latitude</label>
+            <input id="txtLat" type="text" ng-model="lat" placeholder="Entry latitude" required/><br/>
+            <label for="txtlon">Longitud</label>
+            <input id="txtLon"  type="text"  ng-model="long"  placeholder="Entry longitud" required/><br/>
+
+
+            <button ng-click="search();" >Search</button>
+        </div>
+    </script>
+    <style type="text/css">
+        body,html, #map-canvas{ height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script>
+        angular.module('myApp', []).controller('MyController', function ($scope,service) {
+        }).directive('googleMap', function(service){
+            return {
+                templateUrl: '_googleMap.html',
+                scope: {
+                    lat:'=',
+                    long:'=',
+                },
+                link: function (scope, element, attributes) {
+                    scope.lat = '37.376200';
+                    scope.long = '-122.030747';
+                    service.look(parseFloat(scope.lat),parseFloat(scope.long));
+                    scope.search = function () {
+                        service.look(parseFloat(scope.lat),parseFloat(scope.long));
+                    }
+                }
+            }
+        }).factory('service', function(){
+            return {
+                look: function (lat, long) {
+                    var mapOptions = {
+                        center: {lat: lat, lng: long},
+                        zoom: 14
+                    };
+                    var div = document.getElementById('map-canvas');
+                    var map = new google.maps.Map( div,
+                            mapOptions);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(lat, long),
+                        title:"Home!"
+                    });
+                }
+            }
+        })
+    </script>
+</head>
+<h2>Map Location</h2>
+<body ng-controller="MyController">
+
+<div google-map lat="lat" long="long"></div>
+<div id="map-canvas"></div>
+
+</body>
+</html>

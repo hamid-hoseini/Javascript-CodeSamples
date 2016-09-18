@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>palindrome Chain Length</title>
+    <script>
+        var cnt = 0;
+        var palindromeChainLength = function(n) {
+            if (n===0 || n === undefined || n === null || isNaN(n) || n<0) return 0;
+            if (n === reverseNumber(n)) return 0;
+            var newNum = n + reverseNumber(n);
+            cnt++;
+            console.log(newNum);
+
+            if (newNum !== reverseNumber(newNum))
+                palindromeChainLength(newNum);
+
+            return cnt;
+
+        };
+        function reverseNumber(num){
+            var rev= num.toString().split('').reverse().join('');
+            return parseInt(rev);
+
+        }
+        console.log(palindromeChainLength(89));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

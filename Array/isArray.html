@@ -8,10 +8,10 @@
         console.log(Array.isArray(arr));    // true
 
         // all of follow codes return true
-        Array.isArray([]);
-        Array.isArray(new Array());
+        Array.isArray([]);                  // true
+        Array.isArray(new Array());         // true
         // Little known fact: Array.prototype itself is an array:
-        Array.isArray(Array.prototype);
+        Array.isArray(Array.prototype);     // true
 
         // if browser does not support isArray
         if (!Array.isArray) {
