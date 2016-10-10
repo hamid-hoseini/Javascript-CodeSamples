@@ -32,13 +32,13 @@
         var prop;
         for(prop in car){
             if (car.hasOwnProperty(prop))
-                console.log(prop+ ": "+ car[prop]);
+                console.log(prop+ ": "+ car[prop]);         // "id: 1"
         }
-        console.log(Object.keys(car));
-        console.log(Object.getOwnPropertyNames(car));
+        console.log(Object.keys(car));                      // ["id"]
+        console.log(Object.getOwnPropertyNames(car));       // ["id", "model"]
 
         for(prop in car){
-            console.log(prop+ ": "+ car[prop]);
+            console.log(prop+ ": "+ car[prop]);             // return all properties of object except "model"
         }
         console.log(car.getModel());
     </script>

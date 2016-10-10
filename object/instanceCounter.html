@@ -9,7 +9,7 @@
             Car.prototype.counter++;
             this.counter = Car.prototype.counter;
         }
-        Car.prototype.counter=cnt;
+        Car.prototype.counter = cnt;
         var car1=new Car();
         var car2=new Car();
 
@@ -20,23 +20,6 @@
         console.log(Car.counter);   // shows 100
         var car3 = new Car();
         console.log(car3.counter);  // shows 3
-
-        /*=====================================*/
-        function isEqual(a, b) {
-            var aProps = Object.getOwnPropertyNames(a),
-                bProps = Object.getOwnPropertyNames(b);
-            if (aProps.length != bProps.length) {
-                return false;
-            }
-            for (var i = 0; i < aProps.length; i++) {
-                var propName = aProps[i];
-
-                if (a[propName] !== b[propName]) {
-                    return false;
-                }
-            }
-            return true;
-        }
 
 
     </script>

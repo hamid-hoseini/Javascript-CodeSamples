@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // create literal object
+        var obj = {
+            prop: 100
+        };
+        consol.log(obj.prop);
+
+        // prototypal inheritance by using constructors
+        function Car() {}
+        Car.prototype.wheels = 4;
+        var car = new Car();
+        console.log(car.wheels);    // 4
+
+        // by using Object.create
+        var x = {
+            someprop: 32
+        };
+        var y = Object.create(x);
+        console.log(y.someprop);    // 32
+
+        // create object by defineProperty
+        var o = Object.defineProperty({},'x',{value:10});
+        console.log(o.x);
+
+        // create object by defineProperties
+        var newObj = oObject.defineProperties({}, {
+            "property1": {
+                value: true,
+                writable: true
+            },
+            "property2": {
+                value: "Hello",
+                writable: false
+            }
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
