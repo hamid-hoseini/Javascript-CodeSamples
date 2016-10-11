@@ -5,7 +5,8 @@
     <title></title>
     <script>
         /**
-        * Question:
+         * Reference: http://www.codewars.com/
+         * Description:
          * As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:
          *
          all
@@ -109,6 +110,11 @@
         function isLessThanZero (num) {
             return num < 0;
         }
+
+
+        console.log([3,4,5,6].all(isGreaterThanZero));  // true
+        console.log([3,-4,5,6].all(isGreaterThanZero)); // false
+
 
     </script>
 </head>
