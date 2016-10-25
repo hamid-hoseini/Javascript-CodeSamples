@@ -28,7 +28,7 @@
         console.log(o.x);
 
         // create object by defineProperties
-        var newObj = oObject.defineProperties({}, {
+        var newObj = Object.defineProperties({}, {
             "property1": {
                 value: true,
                 writable: true
