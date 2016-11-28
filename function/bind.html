@@ -7,11 +7,11 @@
         function add1(){
             console.log(this.x, this.y);
 
-        };
+        }
         function add(){
             console.log(this.x, this.y);
 
-        };
+        }
         var o={
             x:10,
             y:10
@@ -21,7 +21,7 @@
         //setTimeout(add1(1,2),100);         // return
         //setTimeout(add1.call(null,1,2),100);
         //setTimeout(add1.bind(o,1,2),100);  // bind return a function
-        fn= add.bind(o)     // bind return a function
+        fn= add.bind(o);    // bind return a function
         fn(1,2);
 
         console.log(undefined === null);    //false

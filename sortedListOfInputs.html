@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * Using input textbox and a button, create a list sorted by replicating of inputs
+         */
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('submit');
+            var inp = document.getElementById('inp');
+            var name = {}, find = false;
+            var li, txt;
+
+            btn.addEventListener('click', function (e) {
+                find = false;
+                for (var prop in name){
+                    if (prop == inp.value){
+                        name[prop]++;
+                        find = true;
+                    }
+                }
+                if (!find){
+                    name[inp.value] = 0;
+                }
+                console.log(name);
+
+                ul.innerHTML = '';
+
+                var newName = sortObject(name);
+                for (var prop in newName){
+                    li = document.createElement('li');
+                    txt = document.createTextNode(prop +' : '+ newName[prop]);
+                    li.appendChild(txt);
+                    ul.appendChild(li);
+                }
+            });
+
+            var ul = document.createElement('ul');
+
+            document.body.appendChild(ul);
+
+            function sortObject(obj){
+                var arr = [];
+                for (var prop in obj){
+                    arr.push({name: prop, val: obj[prop] });
+                }
+                console.log(arr);
+                var newArr = arr.sort(function (a, b) {
+                    return a.val - b.val;
+                });
+                var newObj = {};
+                newArr.forEach(function (item) {
+                    newObj[item.name] = item.val;
+                });
+                return newObj;
+            }
+            inp.addEventListener('keypress', function(e){
+                if (e.keyCode === 13){
+                    console.log('enter pressed');
+                }
+            });
+        })
+
+    </script>
+</head>
+<body>
+<input type="text" id="inp" >
+<input type="button" id="submit" value="submit">
+</body>
+</html>

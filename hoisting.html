@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        x= 10 ;
+        function f(){
+            console.log(x);
+            var x = 20;
+            x++;
+            b(x);
+            console.log(x);
+            for (var i=0; i<5; i++){
+                var x= 30 ;
+                //console.log(x+i);
+            }
+
+            x++;
+            function b(x){
+                console.log(x);
+            }
+
+        }
+
+        f();
+        console.log(x);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
