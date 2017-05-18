@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
-        var obj={x:10};
+        var obj = { x:10 };
         console.log(Object.getOwnPropertyDescriptor(Object.prototype,'toString'));
         console.log(Object.getOwnPropertyDescriptor(obj,'x'));
         console.log(Object.getOwnPropertyDescriptor(obj,'toString'));   // show undefined
@@ -21,7 +21,7 @@
 
 
         //change the object to a value we can use of valueOf()
-        var c1={
+        var c1 = {
             prop: 1,
             valueOf: function(){
                 return String(this.prop);
@@ -58,9 +58,9 @@
         //console.log(adder(2, 6));
 
         function Addr(){
-            this.x=10;
+            this.x = 10;
         }
-        var a=new Addr();
+        var a = new Addr();
         console.log(a.x);
 
 

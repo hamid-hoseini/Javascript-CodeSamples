@@ -12,17 +12,17 @@
         var audi = new Car();
         console.log('The constructor of audi is ....');
         console.log('Is the constructor an own prototype of audi  ', audi.hasOwnProperty('constructor'));           //false
-        console.log('Is the constructor an own prototype of audi  ', Car.prototype.hasOwnProperty('constructor'));  //true
+        console.log('Is the constructor an own prototype of Car  ', Car.prototype.hasOwnProperty('constructor'));  //true
 
         function creatObject(obj){
             return new obj.constructor();
         }
 
         var bmw = creatObject(audi);
-        console.log(bmw.doors);
-        bmw.roll();
+        console.log(bmw.doors);                     // 4
+        bmw.roll();                                 // ' car is rolling ....'
 
-        console.log(Car.prototype.constructor);
+        console.log(Car.prototype.constructor);     // function Car(){this.doors=4;
     </script>
 </head>
 <body>

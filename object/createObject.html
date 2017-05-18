@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
-        // create literal object
+        // 1.create literal object
         var obj = {
             prop: 100
         };
         consol.log(obj.prop);
 
-        // prototypal inheritance by using constructors
+        // 2.prototypal inheritance by using constructors
         function Car() {}
         Car.prototype.wheels = 4;
         var car = new Car();
         console.log(car.wheels);    // 4
 
-        // by using Object.create
+        // 3.by using Object.create
         var x = {
             someprop: 32
         };
         var y = Object.create(x);
         console.log(y.someprop);    // 32
 
-        // create object by defineProperty
+        // 4.create object by defineProperty
         var o = Object.defineProperty({},'x',{value:10});
         console.log(o.x);
 
-        // create object by defineProperties
+        // 5.create object by defineProperties
         var newObj = Object.defineProperties({}, {
             "property1": {
                 value: true,
