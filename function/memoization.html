@@ -13,9 +13,10 @@
                 return 1;
             }
             else{
-                return fibo(n-1)+fibo(n-2);
+                result= fibo(n-1)+fibo(n-2);
+                mem[n] = result;
+                return result
             }
-
         }
     </script>
 </head>

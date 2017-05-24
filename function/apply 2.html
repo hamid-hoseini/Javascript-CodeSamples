@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
+
+        /* by default using Math.max */
+        Math.max(10, 20, 15, 35, 25);
+
         /* How could you use Math.max to find the max value in an array?*/
         function getMax(arr){
             return Math.max.apply(null, arr);
         }
+
+        /* using reduce  */
+        var arr = [1,2,3];
+        var max = arr.reduce(function(a, b) {
+            return Math.max(a, b);
+        });
+
+        /* Using spread operator in ES6 */
+        var arr = [1, 2, 3];
+        var max = Math.max(...arr);
+
     </script>
 </head>
 <body>
