@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * Reference: http://www.codewars.com/
+         * Description:
+         *     Given the string representations of two integers, return the string representation of the sum of those integers.
+         */
+
+        function sumStrings(a,b) {
+            var c;
+            if (a.length > b.length){
+                c = a;
+            } else {
+                c = b;
+                b = a;
+            }
+            b = ("0".repeat(c.length - b.length)).concat(b);
+            var r , k=0 , result = '', s=0;
+            for (var i= c.length-1; i>=0  ; i--){
+                s = 0;
+                s = (+c[i] + (+b[i]) + k);
+                r = s % 10;
+                k = (s - r) / 10;
+                result = r.toString() + result ;
+            }
+            if (k !== 0){
+                result = k + result;
+            }
+            return result.replace(/^0+/,"");
+        }
+
+        console.log(sumStrings('00103', '08567'));
+        console.log(sumStrings('00145326890654986436789903', '046545678797656457698774538567'));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
